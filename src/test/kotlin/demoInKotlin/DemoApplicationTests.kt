@@ -1,6 +1,5 @@
-package demo
+package demoInKotlin
 
-import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest
 
 @SpringBootTest
