@@ -23,10 +23,14 @@ dependencies {
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-	runtimeOnly("org.postgresql:postgresql")
+    implementation("junit:junit:4.13.1")
+    runtimeOnly("org.postgresql:postgresql")
+	testImplementation("com.ninja-squad:springmockk:3.0.1")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
-}
+	testImplementation("io.mockk:mockk:1.10.6")
+	testImplementation ("org.jetbrains.kotlin:kotlin-test")
 
+}
 tasks.withType<KotlinCompile> {
 	kotlinOptions {
 		freeCompilerArgs = listOf("-Xjsr305=strict")
