@@ -1,19 +1,13 @@
 package demoInKotlin
 
-import io.mockk.every
-import io.mockk.mockk
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.http.MediaType
 import org.springframework.test.web.servlet.MockMvc
-import org.springframework.test.web.servlet.get
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers
-import org.springframework.test.web.servlet.setup.MockMvcBuilders
-import java.time.LocalDateTime
-import kotlin.test.assertEquals
 
 @SpringBootTest
 @AutoConfigureMockMvc
@@ -23,15 +17,16 @@ class BookControllerTest {
 
     @Test
     fun `should get all book messages when get books`() {
-        var mockService = mockk<BookService>()
-        var bookController = BookController(mockService)
-        mockMvc = MockMvcBuilders.standaloneSetup(bookController).build();
+//        var mockBooks = listOf<Books>(
+//            Books("1", "weiwei", "d", LocalDateTime.MAX),
+//            Books("2", "weiwei", "d", LocalDateTime.MIN)
+//        )
+//        var mockService = mockk<BookService>()
+//        every { mockService.findBooks() } returns mockBooks
+//        var bookController = BookController(mockService)
+//        mockMvc = MockMvcBuilders.standaloneSetup(bookController).build();
+//
 
-        var mockBooks = listOf<Books>(
-            Books("1", "weiwei", "d", LocalDateTime.MAX),
-            Books("2", "weiwei", "d", LocalDateTime.MIN)
-        )
-        every { mockService.findBooks() } returns mockBooks
 
 
 
