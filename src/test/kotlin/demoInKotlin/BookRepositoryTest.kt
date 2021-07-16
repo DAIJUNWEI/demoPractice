@@ -2,7 +2,9 @@ package demoInKotlin
 
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.boot.test.context.ConfigFileApplicationContextInitializer
 import org.springframework.boot.test.context.SpringBootTest
+import org.springframework.test.context.ContextConfiguration
 import org.springframework.test.context.TestPropertySource
 import java.time.LocalDateTime
 import kotlin.test.assertEquals
@@ -12,6 +14,8 @@ import kotlin.test.assertNotNull
 @SpringBootTest
 @TestPropertySource("classpath:application-test.properties")
 class BookRepositoryTest(@Autowired val bookRepository: BookRepository) {
+
+
     @Test
     fun `should save entity`() {
 
