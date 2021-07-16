@@ -1,10 +1,13 @@
 package demoInKotlin
 
+import io.mockk.every
 import io.mockk.junit5.MockKExtension
+import io.mockk.mockk
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
 import org.mockito.Mockito
 import org.springframework.boot.test.context.SpringBootTest
+import java.awt.print.Book
 import java.time.LocalDateTime
 import kotlin.test.assertEquals
 
@@ -18,10 +21,8 @@ class BookServiceTest {
             Books("1", "weiwei", "d", LocalDateTime.MAX),
             Books("2", "weiwei", "d", LocalDateTime.MIN)
         )
-
-        val mockBookRepository: BookRepository = Mockito.mock(BookRepository::class.java)
-        Mockito.`when`(mockBookRepository.findAll()).thenReturn(mockBooks)
-
+        var mockBookRepository= mockk<BookRepository>()
+        every { mockBookRepository.findAll() } returns mockBooks
         val bookService = BookService(mockBookRepository);
         var newList = bookService.findBooks();
         assertEquals(2, newList.size)
