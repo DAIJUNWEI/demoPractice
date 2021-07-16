@@ -1,13 +1,15 @@
 package demoInKotlin
 
+import io.mockk.junit5.MockKExtension
 import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.extension.ExtendWith
 import org.mockito.Mockito
 import org.springframework.boot.test.context.SpringBootTest
 import java.time.LocalDateTime
 import kotlin.test.assertEquals
 
 
-@SpringBootTest
+@ExtendWith(MockKExtension::class)
 class BookServiceTest {
 
     @Test
