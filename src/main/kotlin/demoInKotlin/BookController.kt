@@ -1,18 +1,16 @@
 package demoInKotlin
 
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.PostMapping
-import org.springframework.web.bind.annotation.RequestBody
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
 
 @RestController
-class BookController(val service: BookService) {
+@RequestMapping("/books")
+class BookController(private val service: BookService) {
 
-    @GetMapping(value= ["/books"])
+    @GetMapping
     fun books(): List<Books> = service.findBooks();
 
 
-    @PostMapping(value= ["/books"])
+    @PostMapping
     fun post(@RequestBody books: Books){
         service.post(books);
     }

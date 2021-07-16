@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    username: postgres
+    password:
+    url: jdbc:postgresql://localhost:5432/postgres
+    driver-class-name: org.postgresql.Driver
+    schema: classpath:sql/schema.sql
+    initialization-mode: always
+  jpa:
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
