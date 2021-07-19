@@ -39,7 +39,7 @@ class BookControllerTest {
         ).andExpect(MockMvcResultMatchers.status().isOk)
             .andExpect(
                 MockMvcResultMatchers.content()
-                    .string("[{\"id\":\"12\",\"name\":\"Hello!1111\",\"author\":\"Hello!1111\",\"writeAt\":\"2017-03-08T12:30:54\"},{\"id\":\"1\",\"name\":\"Hello!1111\",\"author\":\"Hello!1111\",\"writeAt\":\"2017-03-08T12:30:54\"}]")
+                    .string("[{\"id\":\"12\",\"name\":\"Hello!1111\",\"author\":\"Hello!1111\",\"writeAt\":\"2017-03-08T12:30:54\"},{\"id\":\"1\",\"name\":\"weiwei\",\"author\":\"d\",\"writeAt\":\"+169104628-12-10T19:08:16\"}]")
             )
 
 
